@@ -1,0 +1,86 @@
+		.css-treeview
+		{
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
+		}
+
+		.css-treeview ul
+		{
+			padding: 0;
+			margin: 0 0 0 14px;
+		}
+		.css-treeview li    
+		{
+			padding: 0;
+			margin: 6px 0 6px 0;
+			list-style: none;
+			line-height: 1;			
+		}
+
+		.css-treeview input
+		{
+			position: absolute;
+			opacity: 0;
+		}
+
+		.css-treeview input ~ ul
+		{
+			display: none;
+		}
+
+		.css-treeview label
+		{
+			font-size: 11px;
+			opacity: .6;
+		}
+
+		.css-treeview label,
+		.css-treeview label::before
+		{
+			cursor: pointer;
+			margin: 0 0 0 -8px;
+		}
+
+		.css-treeview input:disabled + label
+		{
+			cursor: default;
+			opacity: .6;
+		}
+
+		.css-treeview input:checked:not(:disabled) ~ ul
+		{
+			display: block;
+		}
+
+		.css-treeview label::before
+		{
+		
+			content: "▶"; 
+		}
+
+		.css-treeview input:checked + label::before
+		{
+			content: "▼";
+		}
+
+	/* webkit adjacent element selector bugfix */
+	@media screen and (-webkit-min-device-pixel-ratio:0)
+	{
+		.css-treeview 
+		{
+			-webkit-animation: webkit-adjacent-element-selector-bugfix infinite 1s;
+		}
+		
+		@-webkit-keyframes webkit-adjacent-element-selector-bugfix 
+		{
+			from 
+			{ 
+				padding: 0;
+			} 
+			to 
+			{ 
+				padding: 0;
+			}
+		}
+	} 

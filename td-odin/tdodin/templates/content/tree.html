@@ -1,0 +1,38 @@
+<div id="tree" data-url="/get_json_catalog">
+</div>
+
+<script>
+
+$(function() {
+    $('#tree').tree({
+	autoOpen: 1,
+	saveState: true,
+	useContextMenu: false,
+	selectable: true
+	});
+});
+
+$('#tree').bind(
+    'tree.click',
+    function(event) {
+        if (event.node) {
+			var node = event.node
+			location = '/category/' + node.id
+        }
+    }
+);
+$('#tree').bind(
+    'tree.select',
+    function(event) {
+        if (event.node) {
+        }
+        else {
+            // event.node is null
+            // a node was deselected
+            // e.previous_node contains the deselected node
+			$('#tree').tree('selectNode', event.previous_node);
+        }
+    }
+);
+
+</script>

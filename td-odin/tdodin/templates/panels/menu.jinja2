@@ -1,0 +1,15 @@
+        <ul class="nav navbar-nav">
+        <li><a title="О нашей компании" href="/st_content/tdodin">О фирме</a>
+        <li><a title="Контактные телефоны и схема проезда" href="/st_content/contacts">Контакты</a>
+        <li><a title="Поиск товара по каталогу" href="/search/">Поиск</a>
+        <li><a id="basket" title="Ваша корзина и оформление заказа" href="/basket">Корзина</a>
+        </ul>
+
+<script> 
+    $("li").each(function(index){
+        if (window.location.pathname == $(this).find("a").attr("href")) 
+            $(this).addClass("active")
+        else
+            $(this).removeClass("active")
+    });
+</script>

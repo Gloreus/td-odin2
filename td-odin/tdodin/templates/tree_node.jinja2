@@ -1,0 +1,6 @@
+<ul>
+    <li> {% if item.cnt>0 %}
+            <input type="checkbox" id="{{ item.id }}" checked="checked"/> <label for="{{ item.id }}"/>
+         {% endif %}
+         <a href="{{ item.link }}" title="{{ item.name }}">{{ item_name }}</a>
+</ul>

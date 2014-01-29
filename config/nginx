@@ -1,0 +1,14 @@
+server {
+    listen   80;  #Порт на котором nginx принимает подключение
+    server_name local.td-odin.ru; #имя домена
+ 
+    location / {  # Расположение корня сайта
+    uwsgi_pass 127.0.0.1:3031;  #Сокет uwsgi
+    include uwsgi_params;        #Включаем параметры uwsgi
+    }
+  
+    location /static/ { #папка static Вашего Django проекта. Пишем именно так, иначе не будет правильно работать.
+        root /www/td-odin; #Папка в которой лежит папка static.
+        autoindex on;
+    }
+}
